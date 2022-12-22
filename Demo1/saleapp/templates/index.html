@@ -1,0 +1,23 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+{% if medicine %}
+<div class="row">
+    {% for p in medicine %}
+    <div class="col-md-3 col-sm-12" style="padding:1rem;">
+        <div class="card">
+            <img class="card-img-top" src="{{ p.image }}" alt="{{ p.name }}">
+            <div class="card-body">
+                <h4 class="card-title">{{ p.name }}</h4>
+                <p class="card-text">{{ "{:,.1f}".format(p.unit_price) }} VNĐ</p>
+                <a href="/medicine/{{p.id}}" class="btn btn-primary">Xem chi tiết</a>
+                <a href="javascript:;" onclick="addToCart({{p.id}}, '{{p.name}}', {{p.unit_price}})" class="btn btn-danger">Đặt hàng</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>không có sản phẩm!!</p>
+{% endif %}
+{% endblock %}

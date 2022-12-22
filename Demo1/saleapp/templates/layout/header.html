@@ -1,0 +1,116 @@
+<!--<nav class="navbar navbar-expand-sm bg-dark navbar-dark">-->
+<!--    <div class="container-fluid">-->
+<!--        <a class="navbar-brand" href="#">PHÒNG KHÁM</a>-->
+<!--        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">-->
+<!--            <span class="navbar-toggler-icon"></span>-->
+<!--        </button>-->
+<!--        <div class="collapse navbar-collapse" id="collapsibleNavbar">-->
+<!--            <ul class="navbar-nav me-auto">-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link" href="/">Trang chủ</a>-->
+<!--                </li>-->
+<!--            {% for cate in categories %}-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="/?category_id={{cate.id}}">{{ cate.name }}</a>-->
+<!--                    </li>-->
+<!--            {% endfor %}-->
+
+
+<!--                {% if current_user.is_authenticated %}-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link text-danger" href="/">-->
+<!--                        <img src="{{ current_user.avatar }}"width="40" class="rounded-circle" alt="{{ current_user.name }}"/>-->
+<!--                        Chào <span class="text-info">{{ current_user.name}}</span>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                 <li class="nav-item">-->
+<!--                    <a class="nav-link text-danger" href="/logout">Đăng xuất</a>-->
+<!--                </li>-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link text-success" href="/register">Đăng ký lịch khám</a>-->
+<!--                </li>-->
+<!--                {% else %}-->
+<!--                <li class="nav-item">-->
+<!--                    <a class="nav-link text-danger" href="/login">Đăng nhập</a>-->
+<!--                </li>-->
+<!--                 <li class="nav-item">-->
+<!--                    <a class="nav-link text-success" href="/register">Đăng ký lịch khám</a>-->
+<!--                </li>-->
+<!--                {% endif %}-->
+<!--                 <li class="nav-item">-->
+<!--                    <a class="nav-link text-danger" href="/cart">Giỏ Hàng&#9889;<span class="badge bg-danger cart-counter">{{ cart.total_quantity }}</span></a>-->
+<!--                </li>-->
+
+<!--            </ul>-->
+<!--            <form class="d-flex" action="/">-->
+<!--                <input class="form-control me-2" name="keyword" type="text" placeholder="Nhập từ khóa...">-->
+<!--                <button class="btn btn-primary" type="submit">Tìm</button>-->
+<!--            </form>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="vertical-nav bg-white" id="sidebar">
+  <div class="py-4 px-3 mb-4 bg-light">
+    <div class="media d-flex align-items-center"><img src="https://cdn.nhanlucnganhluat.vn/uploads/images/A6B12386/logo/2018-11/logo_hoan_chinh.jpg" alt="lego=phongkham" width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+      <div class="media-body">
+        <h4 class="m-0">Phòng Khám</h4>
+        <p class="font-weight-light text-muted mb-0">Sức khỏe</p>
+      </div>
+    </div>
+  </div>
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+        <a class="nav-link" href="/">Trang chủ</a>
+    </li>
+    {% if current_user.is_authenticated %}
+      <li class="nav-item">
+          <a class="nav-link text-danger" href="/">
+              <img src="{{ current_user.avatar }}" width="40" class="rounded-circle" alt="{{ current_user.name }}"/>
+              Chào <span class="text-info">{{ current_user.name}}</span>
+          </a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link text-danger" href="/logout">Đăng xuất</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link text-success" href="/register">Đăng ký lịch khám</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+          <a class="nav-link text-danger" href="/login">Đăng nhập</a>
+      </li>
+      <li class="nav-item">
+          <a class="nav-link text-success" href="/register">Đăng ký lịch khám</a>
+      </li>
+      {% endif %}
+      <li class="nav-item">
+          <a class="nav-link text-danger" href="/cart">Giỏ Hàng &#128230;<span class="badge bg-danger cart-counter">{{ cart.total_quantity }}</span></a>
+      </li>
+      <form class="d-flex" action="/"style="margin:5px">
+          <input class="form-control me-2" name="keyword" type="text" placeholder="Nhập từ khóa...">
+          <button class="btn btn-primary" type="submit">Tìm</button>
+      </form>
+  </ul>
+
+
+</div>
+<!-- End vertical navbar -->
+
+
+<!-- Page content holder -->
+<div class="page-content p-5" id="content">
+  <!-- Toggle button -->
+  <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Chức năng</small></button>
+
+  <!-- Demo content -->
+
+  <div class="separator"></div>
+  <div class="row text-white">
+    <div class="col-lg-7">
+
+    </div>
+  </div>
+
+</div>
